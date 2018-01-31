@@ -1,16 +1,6 @@
-name: Mutation Server (Local)
+name: mtDNA Server (Local)
 description: Mutation Server is able to detect both variants in genomic CNV regions and heteroplasmies in mitochondrial DNA. Users can specify fastq (SE or PE), BAM and CRAM files as an input and receive annotated variant files in return.
 version: 1.0
-
-cluster:
-
-  image: us-east-1/ami-da0cf8b3
-  type: m1.large,m1.xlarge
-  ports: 80,50030,50070
-  creationOnly: false
-  installMapred: true
-  initScript: install.sh
-  service: hadoop
  
 mapred:
 
@@ -23,12 +13,24 @@ mapred:
       params: analyse-local --input $input --reference $archive --level $level --outputRaw ${raw}.txt --outputVar ${variants}.txt --baq $baq --indel $indel --baseQ $baseQuality --mapQ $mapQuality --alignQ $alignQuality
     
     - name: Generate HSD File
+      type: java
       jar: mitolib-0.1.0.jar
-      params: splitter --in $variantsLocal --out ${haplogrepInput}.hsd    
+      params: splitter --in ${variants}.txt --out ${haplogrepInput}.hsd    
+
+    - name: Haplogroup Contamination Check
+      type: java
+      jar: HaplogrepCMD2.jar
+      params: --format hsd --in ${haplogrepInput}.hsd --out ${haplogroups}.txt --phylotree 17
+
+    - name: Check HaploGrep File for Contamination
+      type: java
+      jar: mitolib-0.1.0.jar
+      params: contChecker --inVar ${variants}.txt --inHG2 ${haplogroups}.txt  --out ${contaminated}.txt  
+      
   inputs:
 
     - id: input
-      description: Input Files (SAM/BAM/CRAM)
+      description: BAM Input Files
       type: local-folder
 
     - id: archive
@@ -101,8 +103,16 @@ mapred:
       temp: false
  
     - id: haplogrepInput
-      description: Variants file
+      description: HaploGrep Input File
       type: local-file
-      removeHeader: false
+      download: false
+      
+    - id: haplogroups
+      description: Detected Haplogroups with HaploGrep
+      type: local-file
+      download: false
+
+    - id: contaminated
+      description: Detected Haplogroups Contamination with HaploGrep
+      type: local-file
       download: true
-      temp: false
