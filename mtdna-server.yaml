@@ -1,6 +1,16 @@
-name: mtDNA Server (Local)
+name: Mutation Server (Local)
 description: Mutation Server is able to detect both variants in genomic CNV regions and heteroplasmies in mitochondrial DNA. Users can specify fastq (SE or PE), BAM and CRAM files as an input and receive annotated variant files in return.
 version: 1.0
+
+cluster:
+
+  image: us-east-1/ami-da0cf8b3
+  type: m1.large,m1.xlarge
+  ports: 80,50030,50070
+  creationOnly: false
+  installMapred: true
+  initScript: install.sh
+  service: hadoop
  
 mapred:
 
@@ -30,13 +40,14 @@ mapred:
   inputs:
 
     - id: input
-      description: BAM Input Files
+      description: Input Files (SAM/BAM/CRAM)
       type: local-folder
 
     - id: archive
       description: Reference FASTA
-      type: local-file
-      visible: true
+      type: text
+      value: rCRS.fasta
+      visible: false
       
     - id: level
       description: Detection Level in %
