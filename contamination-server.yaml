@@ -18,6 +18,7 @@ mapred:
   steps:
 
     - name: Calculate Variants
+      type: java
       jar: cnv-mutation-server-1.0.jar
       params: analyse-local --input $input --reference $archive --level $level --outputRaw ${raw}.txt --outputVar ${variants}.txt --baq $baq --indel $indel --baseQ $baseQuality --mapQ $mapQuality --alignQ $alignQuality
     
