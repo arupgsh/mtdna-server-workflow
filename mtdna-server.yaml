@@ -25,7 +25,7 @@ mapred:
     - name: Generate HSD File
       type: java
       jar: mitolib-0.1.0.jar
-      params: splitter --in ${variants}.txt --out ${haplogrepInput}.hsd    
+      params: splitter --in ${variants}.txt --vaf $level --out ${haplogrepInput}.hsd    
 
     - name: Haplogroup Contamination Check
       type: java
@@ -35,7 +35,7 @@ mapred:
     - name: Check HaploGrep File for Contamination
       type: java
       jar: mitolib-0.1.0.jar
-      params: contChecker --inVar ${variants}.txt --inHG2 ${haplogroups}.txt  --out ${contaminated}.txt  
+      params: contChecker --inVar ${variants}.txt  --vaf $level --inHG2 ${haplogroups}.txt  --out ${contaminated}.txt  
       
   inputs:
 
