@@ -4,5 +4,5 @@ The new mtDNA-Server workflow from BAM to final variants. All executed locally. 
 Currently the following steps are included:
 
 * Create homplasmies/heteroplasmies with https://github.com/seppinho/mutation-server
-* Calculate haplogroups with http://haplgrep.uibk.ac.at
+* Calculate haplogroups with http://haplogrep.uibk.ac.at/
 * Check Contamination with https://github.com/haansi/mitolib
