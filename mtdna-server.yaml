@@ -62,7 +62,7 @@ workflow:
 
     - id: alignQuality
       description: Min Alignment quality
-      visible: true
+      visible: false
       type: number
       value: 30     
       
@@ -70,25 +70,25 @@ workflow:
       description: Min. Base quality
       type: number
       value: 20
-      visible: true
+      visible: false
 
     - id: baq
       description: Calculate BAQ
       type: checkbox
-      visible: true
+      visible: false
       values:
         true: true
         false: false
       value: true
 
     - id: indel
-      description: Indel calling
+      description: deletion calling (beta)
       type: checkbox
       visible: true
       values:
         true: true
         false: false
-      value: false
+      value: true
                  
     - id: submissionSource
       description: submission source
