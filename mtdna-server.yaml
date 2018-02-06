@@ -36,6 +36,14 @@ workflow:
       jar: mitolib-0.1.0.jar
       params: contChecker --inVar ${variants}.txt  --vaf $level --inHG2 ${haplogroupsCont}.txt  --out ${contaminated}.txt  
       
+#if (${docker_installed} == "true")
+    - name: Create report
+      type: rmd_docker
+      rmd: report.Rmd
+      params: ${raw}.txt
+      output: ${report}.html
+#end
+
   inputs:
 
     - id: input
@@ -134,5 +142,10 @@ workflow:
 
     - id: contaminated
       description: Detected Haplogroups Contamination with HaploGrep
+      type: local-file
+      download: true
+
+    - id: report
+      description: mtDNA-Server Interactive Report
       type: local-file
       download: true

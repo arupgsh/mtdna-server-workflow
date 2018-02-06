@@ -1,0 +1,32 @@
+---
+title: "mtDNA-Server Report"
+output: html_document
+---
+
+## Coverage Plots
+
+```{r echo=FALSE, warning=FALSE, message=FALSE, fig.width=12, fig.height=10}
+suppressPackageStartupMessages(library(ggplot2))
+suppressPackageStartupMessages(library(knitr))
+suppressPackageStartupMessages(library(data.table))
+
+args = c();
+#args[1] = "/home/seb/mutation-server/raw.txt";
+
+args <- commandArgs(trailingOnly = TRUE)
+raw = read.table(args[1], header = TRUE, sep="\t");
+```
+
+```{r echo=FALSE, fig.width=5.5, fig.height=4, result='asis'}
+rawSelected<- raw[seq(1, nrow(raw), 25),]
+rawSelected<-rawSelected[c(1,2,8,9)]
+max<-max((rawSelected[3])+(rawSelected[4]))
+s<-split(rawSelected, rawSelected$SAMPLE)
+meanCov<-mean(rawSelected$COV.FWD+rawSelected$COV.REV)
+for( i in 1:length(s)) {
+	print(ggplot(rbindlist(s[i])) +  geom_line(aes(x= POS, y = COV.FWD+COV.REV), colour="#E69F00")  + geom_hline(aes(yintercept=mean(COV.FWD+COV.REV)), colour="#0072B2", linetype="dashed")+ geom_hline(aes(yintercept=meanCov), colour="#7200B2", linetype="dashed") + xlab("mtDNA position") + ylab("Coverage") + ylim(c(0, max)) +ggtitle(names(s)[i]) )
+}
+
+```
+
+
