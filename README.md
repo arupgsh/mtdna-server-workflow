@@ -31,5 +31,5 @@ Install mtdDNA Server Workflow:
 ./cloudgene server
 ```
 
-Open your webrowser and enter http://localhost:8082. Use `admin` and `admin1978` to login.
+Open your web browser and enter http://localhost:8082. Use `admin` and `admin1978` to login.
 
