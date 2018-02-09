@@ -1,5 +1,5 @@
 # mtDNA Server Workflow
-The new mtDNA-Server workflow from BAM to final variants. All executed locally. We also provide a web service to this: https://mtdna-server.uibk.ac.at/
+The new mtDNA-Server workflow from BAM to final variants. All steps are executed locally. We also provide a web service to this: https://mtdna-server.uibk.ac.at/
 
 Currently the following steps are included:
 
