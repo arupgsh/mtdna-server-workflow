@@ -7,9 +7,9 @@ Currently the following steps are included:
 * Calculate haplogroups with http://haplogrep.uibk.ac.at/
 * Check Contamination with https://github.com/haansi/mitolib
 
-## Installation
+## Run Workflow locally
 
-Install Cloudgene with the following commands:
+1) install Cloudgene with the following commands:
 
 ```
 mkdir cloudgene
@@ -17,7 +17,7 @@ cd cloudgene
 curl -s install.cloudgene.io | bash
 ```
 
-Install mtDNA Server Workflow:
+2) Install mtDNA Server Workflow:
 
 ```
 ./cloudgene gh seppinho/mtdna-server-workflow@latest
