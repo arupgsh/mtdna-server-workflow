@@ -3,7 +3,7 @@ This repository includes the new mtDNA-Server workflow from BAM files to homopla
 
 ## Run mtDNA-Server workflow locally
 
-1) install Cloudgene with the following commands:
+1) Install Cloudgene with the following commands
 
 ```
 mkdir cloudgene
@@ -11,7 +11,7 @@ cd cloudgene
 curl -s install.cloudgene.io | bash
 ```
 
-2) Install the mtDNA Server workflow:
+2) Install the mtDNA Server workflow
 
 ```
 ./cloudgene gh seppinho/mtdna-server-workflow@latest
