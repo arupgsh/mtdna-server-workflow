@@ -1,4 +1,4 @@
-name: Mutation Server / mtDNA-Server
+name: mtDNA-Server
 description: This service is able to detect heteroplasmies in mitochondrial DNA. Users can specify fastq (SE or PE), BAM and CRAM files as an input and receive variant files in return.
 version: 1.0.1
  
