@@ -1,6 +1,6 @@
-name: Mutation Server / mtDNA-Server
+name: mtDNA-Server
 description: This service is able to detect heteroplasmies in mitochondrial DNA. Users can specify fastq (SE or PE), BAM and CRAM files as an input and receive variant files in return.
-version: 1.0.1
+version: 1.1.1
  
 workflow:
 
@@ -8,38 +8,38 @@ workflow:
 
     - name: Determine Variants
       type: java
-      jar: mutation-server-1.0.1.jar
+      jar: jars/mutation-server-1.1.1.jar
       params: analyse-local --input $input --reference $archive --level $level --outputRaw ${raw}.txt --outputVar ${variants}.txt --baq $baq --indel $indel --baseQ $baseQuality --mapQ $mapQuality --alignQ $alignQuality
     
     - name: Generate Haplogrep Input
       type: java
-      jar: mitolib-0.1.0.jar
-      params: variants2hsd --in ${variants}.txt --out ${haplogrepInput}.hsd    
+      jar: jars/mitolib-0.1.0.jar
+      params: variants2hsd --in ${variants}.txt --out ${haplogrepInput}.hsd    	
 
     - name: Haplogroup Classification
       type: java
-      jar: haplogrep-2.1.1.jar
+      jar: jars/haplogrep-2.1.1.jar
       params: --format hsd --in ${haplogrepInput}.hsd --out ${haplogroups}.txt --phylotree 17
 
     - name: Generate Haplogrep Input for Contamination
       type: java
-      jar: mitolib-0.1.0.jar
+      jar: jars/mitolib-0.1.0.jar
       params: splitter --in ${variants}.txt --vaf $level --out ${haplogrepInputCont}.hsd   
 
     - name: Haplogroup Classification for Contamination
       type: java
-      jar: haplogrep-2.1.1.jar
+      jar: jars/haplogrep-2.1.1.jar
       params: --format hsd --in ${haplogrepInputCont}.hsd --out ${haplogroupsCont}.txt --phylotree 17
 
     - name: Contamination Checker
       type: java
-      jar: mitolib-0.1.0.jar
+      jar: jars/mitolib-0.1.0.jar
       params: contChecker --inVar ${variants}.txt  --vaf $level --inHG2 ${haplogroupsCont}.txt  --out ${contaminated}.txt  
       
 #if (${docker_installed} == "true")
     - name: Create report
       type: rmd_docker
-      rmd: report.Rmd
+      rmd: files/report.Rmd
       params: ${raw}.txt
       output: ${report}.html
 #end
@@ -53,7 +53,7 @@ workflow:
     - id: archive
       description: Reference FASTA
       type: text
-      value: rCRS.fasta
+      value: files/rCRS.fasta
       visible: false
       
     - id: level
@@ -90,7 +90,7 @@ workflow:
       value: true
 
     - id: indel
-      description: deletion calling (beta)
+      description: deletion calling
       type: checkbox
       visible: true
       values:
