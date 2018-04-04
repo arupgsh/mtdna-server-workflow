@@ -3,7 +3,7 @@ This repository includes the new mtDNA-Server workflow from BAM files to homopla
 
 ## Run mtDNA-Server workflow locally
 
-1) Install Cloudgene with the following commands
+1) Install [Cloudgene](https://github.com/genepi/cloudgene) with the following commands:
 
 ```
 mkdir cloudgene
@@ -29,5 +29,5 @@ curl -s install.cloudgene.io | bash
 Currently the following steps are included:
 
 * Create homplasmies/heteroplasmies with https://github.com/seppinho/mutation-server
-* Calculate haplogroups with http://haplogrep.uibk.ac.at/
+* Calculate haplogroups with http://haplogrep.uibk.ac.at
 * Check Contamination with https://github.com/haansi/mitolib
