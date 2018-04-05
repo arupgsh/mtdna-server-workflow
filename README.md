@@ -17,13 +17,13 @@ curl -s install.cloudgene.io | bash
 ./cloudgene gh seppinho/mtdna-server-workflow@1.1.1 -name mtdna-server-1.1.1
 ```
 3) Run the workflow 
-3a) Command line
+
+* Command line Execution
 ```
 ./cloudgene run mtdna-server-1.1.1 --input <bam-folder>
 ```
 
-
-3b) Web Service
+* Graphical Execution
 ```
 ./cloudgene server
 ```
