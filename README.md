@@ -19,14 +19,16 @@ curl -s install.cloudgene.io | bash
 3) Run the workflow 
 
    a. Command line Execution
-```
-./cloudgene run mtdna-server-1.1.1 --input <bam-folder>
-```
+   
+   ```
+   ./cloudgene run mtdna-server-1.1.1 --input test-data
+   ```
 
    b. Graphical Execution
-```
-./cloudgene server
-```
+   
+   ```
+   ./cloudgene server
+   ```
 To execute a job, open your web browser and enter http://localhost:8082. Use `admin` and `admin1978` to login.
 
 3.2) Workflow steps
