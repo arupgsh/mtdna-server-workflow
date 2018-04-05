@@ -42,19 +42,19 @@ if you don't want to execute the complete workflow and you are only interested i
 
 ### Download Tool
 ```
-mkdir mutation-server
-wget https://github.com/seppinho/mtdna-server-workflow/releases/download/1.1.1/mutation-server-1.1.1.jar -O mutation-server/mutation-server-1.1.1.jar
+mkdir mtdna-server
+wget https://github.com/seppinho/mtdna-server-workflow/releases/download/1.1.1/mutation-server-1.1.1.jar -O mtdna-server/mutation-server-1.1.1.jar
 ```
 ### Download Test Data
 
 ```
-mkdir mutation-server/input-files
-wget https://mtdna-server.uibk.ac.at/static/bam/rCRS.fasta -O mutation-server/input-files/rCRS.fasta
-wget https://mtdna-server.uibk.ac.at/static/bam/HG00096.mapped.ILLUMINA.bwa.GBR.low_coverage.20101123.bam  -O mutation-server/input-files/HG00096.mapped.ILLUMINA.bwa.GBR.low_coverage.20101123.bam
+mkdir mtdna-server/input-files
+wget https://mtdna-server.uibk.ac.at/static/bam/rCRS.fasta -O mtdna-server/input-files/rCRS.fasta
+wget https://mtdna-server.uibk.ac.at/static/bam/HG00096.mapped.ILLUMINA.bwa.GBR.low_coverage.20101123.bam  -O mtdna-server/input-files/HG00096.mapped.ILLUMINA.bwa.GBR.low_coverage.20101123.bam
 ```
 ### Run Tool
 ```
-cd mutation-server
+cd mtdna-server
 java -jar mutation-server-1.1.1.jar  analyse-local --input input-files  --reference input-files/rCRS.fasta --level 0.01 --outputRaw raw.txt --outputVar var.txt --baq true --baseQ 20 --mapQ 20 --alignQ 30 --indel true
 ```
 The --indel feature only checks for deletions. 
