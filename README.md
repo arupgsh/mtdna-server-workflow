@@ -1,5 +1,5 @@
 # mtDNA-Server Workflow
-This repository includes the new mtDNA-Server workflow starting with BAM files. Note: For mapping the reads (FASTQ to BAM) of the circular mitchondrial genome, we recommend using [bwa mem](https://github.com/lh3/bwa). 
+This repository includes the new mtDNA-Server workflow starting with BAM files. Note: For read mapping (FASTQ to BAM) to the circular mitchondrial genome, we recommend using [bwa mem](https://github.com/lh3/bwa). 
 
 Two tools exist:
 - [Variant Detection Only](#variant-detection-only)
