@@ -38,7 +38,7 @@ To execute a job, open your web browser and enter http://localhost:8082. Use `ad
 
 ## Variant Detection Only
 
-if you don't want to execute the complete workflow and only interested in the variants, run the following tool:
+if you don't want to execute the complete workflow and you are only interested in the variants, run the following tool:
 
 ### Download Tool
 ```
