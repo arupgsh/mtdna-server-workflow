@@ -1,9 +1,9 @@
 # mtDNA Server Workflow
-This repository includes the new mtDNA-Server workflow from BAM files to homoplasmies/heteroplasmies. All steps are executed locally. 
+This repository includes the new mtDNA-Server workflow starting with BAM files. It outputs homoplasmic and heteroplasmic sites, haplogroups using [HaploGrep](http://haplogrep.uibk.ac.at/) and creates a contamination report. 
 
-## Run mtDNA-Server workflow locally
+## Run mtDNA-Server workflow
 
-1) Install [Cloudgene](https://github.com/genepi/cloudgene) with the following commands:
+1) Install the workflow engine [Cloudgene](https://github.com/genepi/cloudgene).
 
 ```
 mkdir cloudgene
@@ -14,15 +14,20 @@ curl -s install.cloudgene.io | bash
 2) Install the mtDNA Server workflow
 
 ```
-./cloudgene gh seppinho/mtdna-server-workflow@latest
+./cloudgene gh seppinho/mtdna-server-workflow@1.1.1 -name mtdna-server-1.1.1
+```
+3) Run the workflow 
+3a) Command line
+```
+./cloudgene run mtdna-server-1.1.1 --input <bam-folder>
 ```
 
-3) Start the local web service
+
+3b) Web Service
 ```
 ./cloudgene server
 ```
-
-4) Open your web browser and enter http://localhost:8082. Use `admin` and `admin1978` to login.
+Now, open your web browser and enter http://localhost:8082. Use `admin` and `admin1978` to login.
 
 ## Workflow steps
 
