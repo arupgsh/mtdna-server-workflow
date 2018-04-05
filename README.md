@@ -1,8 +1,9 @@
 # mtDNA-Server Workflow
-This repository includes the new mtDNA-Server workflow starting with BAM files. Note: For read mapping (FASTQ to BAM) to the circular mitchondrial genome, we recommend using [bwa mem](https://github.com/lh3/bwa). 
+This repository includes the new mtDNA-Server workflow starting with BAM files. 
+Note: For read mapping (FASTQ to BAM), we recommend using [bwa mem](https://github.com/lh3/bwa). 
 
 ## Execute Workflow
- The workflow outputs homoplasmic and heteroplasmic sites, haplogroups using [HaploGrep](http://haplogrep.uibk.ac.at/) and creates a contamination report. 
+ The workflow outputs homoplasmic and heteroplasmic sites, haplogroups using [HaploGrep](http://haplogrep.uibk.ac.at/) and also creates a contamination report. 
  
 1) Install the workflow engine [Cloudgene](https://github.com/genepi/cloudgene).
 
