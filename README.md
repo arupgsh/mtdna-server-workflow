@@ -2,7 +2,7 @@
 This repository includes the new mtDNA-Server workflow starting with BAM files.
 
 Two tools exist:
-- [Variant Detection Only](#run-mtdna-server-workflow)
+- [Variant Detection Only](#variant-detection-only)
 - [Complete mtDNA-Server Workflow](#run-mtdna-server-workflow)
 
 ## Complete mtDNA-Server Workflow
