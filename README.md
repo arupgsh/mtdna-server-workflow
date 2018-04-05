@@ -1,7 +1,11 @@
-# mtDNA Server Workflow
+# mtDNA-Server Workflow
 This repository includes the new mtDNA-Server workflow starting with BAM files. It outputs homoplasmic and heteroplasmic sites, haplogroups using [HaploGrep](http://haplogrep.uibk.ac.at/) and creates a contamination report. 
 
-## Run mtDNA-Server workflow
+To tools exist:
+- [Variant Detection Only](https://github.com/seppinho/mtdna-server-workflow/blob/master/README.md#run-mtdna-server-workflow)
+- [Complete mtDNA-Server Workflow](https://github.com/seppinho/mtdna-server-workflow#run-mtdna-server-workflow)
+
+## Complete mtDNA-Server Workflow
 
 1) Install the workflow engine [Cloudgene](https://github.com/genepi/cloudgene).
 
@@ -31,7 +35,7 @@ curl -s install.cloudgene.io | bash
    ```
 To execute a job, open your web browser and enter http://localhost:8082. Use `admin` and `admin1978` to login.
 
-## Homplasmic/Heteroplasmic Variant Caller
+## Variant Detection Only
 
 if you don't want to execute the complete workflow and only interested in the variants, run the following tool:
 
