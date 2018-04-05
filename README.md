@@ -30,7 +30,7 @@ curl -s install.cloudgene.io | bash
    ```
    ./cloudgene server
    ```
-To execute a job, open your web browser and enter http://localhost:8082. Use `admin` and `admin1978` to login.
+   To execute a job, open your web browser and enter http://localhost:8082. Use `admin` and `admin1978` to login.
 
 ## Workflow steps
 
