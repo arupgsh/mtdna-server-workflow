@@ -1,6 +1,6 @@
 # mtDNA-Server Workflow
-This repository includes the new mtDNA-Server workflow starting with BAM files. 
-Note: For read mapping (FASTQ to BAM), we recommend using [bwa mem](https://github.com/lh3/bwa). 
+This repository includes the new mtDNA-Server workflow starting with BAM files. You can also use our publicly available web service [mtDNA-Server](https://mtdna-server.uibk.ac.at). 
+For initial read mapping (FASTQ to BAM), we recommend using [bwa mem](https://github.com/lh3/bwa). 
 
 ## Execute Workflow
  The workflow outputs homoplasmic and heteroplasmic sites, haplogroups using [HaploGrep](http://haplogrep.uibk.ac.at/) and also creates a contamination report. 
