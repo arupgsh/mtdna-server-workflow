@@ -4,7 +4,7 @@ For initial read mapping (FASTQ to BAM), we recommend using [bwa mem](https://gi
 
 The publicly available web service [mtDNA-Server](https://mtdna-server.uibk.ac.at) also includes read mapping. 
 
-## Execute Workflow
+## Getting Started
  The workflow outputs homoplasmic and heteroplasmic sites using [Mutation-Server](https://github.com/seppinho/mutation-server), haplogroups using [HaploGrep](http://haplogrep.uibk.ac.at/) and contamination using [mitolib](https://github.com/haansi/mitolib). 
  
 1) Install the workflow engine [Cloudgene](https://github.com/genepi/cloudgene)
