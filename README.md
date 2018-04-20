@@ -32,7 +32,7 @@ curl -s install.cloudgene.io | bash
     b. Command line Execution
    
    ```
-   ./cloudgene run mtdna-server-1.1.1 --input apps/mtdna-server-1.1.1/*/test-data
+   ./cloudgene run mtdna-server-1.1.2 --input apps/mtdna-server-1.1.2/*/test-data
    ```
     
 
