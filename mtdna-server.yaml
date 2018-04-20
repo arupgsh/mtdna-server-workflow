@@ -1,6 +1,6 @@
 name: mtDNA-Server
 description: This service is able to detect heteroplasmies in mitochondrial DNA. Users can specify fastq (SE or PE), BAM and CRAM files as an input and receive variant files in return.
-version: 1.1.1
+version: 1.1.2
  
 workflow:
 
@@ -8,7 +8,7 @@ workflow:
 
     - name: Determine Variants
       type: java
-      jar: jars/mutation-server-1.1.1.jar
+      jar: jars/mutation-server-1.1.2.jar
       params: analyse-local --input $input --reference $archive --level $level --outputRaw ${raw}.txt --outputVar ${variants}.txt --baq $baq --indel $indel --baseQ $baseQuality --mapQ $mapQuality --alignQ $alignQuality
     
     - name: Generate Haplogrep Input
