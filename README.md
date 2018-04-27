@@ -18,7 +18,7 @@ curl -s install.cloudgene.io | bash
 2) Install the mtDNA Server workflow
 
 ```
-./cloudgene gh seppinho/mtdna-server-workflow@1.1.3 -name mtdna-server-1.1.3
+./cloudgene gh seppinho/mtdna-server-workflow@v1.1.3 -name mtdna-server-v1.1.3
 ```
 3) Run the workflow 
 
@@ -32,7 +32,7 @@ curl -s install.cloudgene.io | bash
     b. Command line Execution
    
    ```
-   ./cloudgene run mtdna-server-1.1.3 --input apps/mtdna-server-1.1.3/*/test-data
+   ./cloudgene run mtdna-server-v1.1.3 --input apps/mtdna-server-1.1.3/*/test-data
    ```
     
 
