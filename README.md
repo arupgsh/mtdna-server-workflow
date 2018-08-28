@@ -1,4 +1,4 @@
-# mtDNA-Server
+# mtDNA-Server Workflow
 This repository includes the new mtDNA-Server workflow starting with BAM files. The workflow can be executed locally without  transfering any data. 
 For initial read mapping (FASTQ to BAM), we recommend using [bwa mem](https://github.com/lh3/bwa). 
 
